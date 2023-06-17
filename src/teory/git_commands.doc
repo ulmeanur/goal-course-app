@@ -45,5 +45,7 @@ git merge origin/FEATURE_BRANCH  // to merge FEATURE_BRANCH iun master
 
 git push origin
 
+git reset <file>  // To unstage all changes for all files added with git add .
+
 
 
