@@ -15,6 +15,7 @@
   font: inherit;
   line-height: 1.5rem;
   padding: 0 0.25rem;
+  background: transparent;
 }
 
 .form-control input:focus {
@@ -22,3 +23,18 @@
   background: #fad0ec;
   border-color: #8b005d;
 }
+
+/* 
+if between classes name we don't have any spaces it meens that all classes need to be on the same element
+ */
+
+ .form-control.invalid input {
+  background: rgb(250, 128, 114);
+  border-color: #ff0000;
+
+ }
+
+ .form-control.invalid label {
+  color: #ff0000;
+ }
+

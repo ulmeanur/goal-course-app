@@ -8,6 +8,9 @@ const CourseInput = props => {
   const [isValid, setIsValid] = useState(true);
 
   const goalInputChangeHandler = event => {
+    if(event.target.value.trim().length >= 0) {
+      setIsValid(true);
+    }
     setEnteredValue(event.target.value);
   };
 
@@ -23,9 +26,14 @@ const CourseInput = props => {
 
   return (
     <form onSubmit={formSubmitHandler}>
-      <div className="form-control">
-        <label style={{color: !isValid ? "salmon":"black"}}>Course Goal</label>
-        <input style={{borderColor: !isValid ? "salmon":"black", background: !isValid ? "salmon":"transparent"}} type="text" onChange={goalInputChangeHandler} />
+      {/* backticks ` ` are template litterals
+      Whatever you type between them will be treated as a regular string. 
+      You can also inject a dynamic value into the string or a JS expresion 
+      with a special syntax using dollar sign and a pair of curly braces, opening and closing
+      */}
+      <div className={`form-control ${!isValid ? "invalid":""}`}>
+        <label>Course Goal</label>
+        <input type="text" onChange={goalInputChangeHandler} />
       </div>
       <Button type="submit">Add Goal</Button>
     </form>
