@@ -4,10 +4,10 @@ import React from 'react';
 export default function App() {
     
     const [isStyled, setIsStyled] = React.useState(false);
+
     return (
         <div>
-            <p style={{color: !isStyled? "white":"red"}}> Style me!</p>
-
+            <p className={isStyled?"active":""}> Style me!</p>
             <button onClick={() => setIsStyled(!isStyled)}>Toggle style</button>
         </div>
     );
